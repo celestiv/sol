@@ -2,7 +2,7 @@ FROM debian:latest
 
 WORKDIR /solar_dns/
 
-COPY solar-dns .
+COPY . .
 
 RUN apt update && \
     apt -y upgrade && \

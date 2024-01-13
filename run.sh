@@ -5,14 +5,15 @@ interface="eth0"
 
 while getopts "i:p:" opt; do
   case $opt in
-    i) interface="$OPTARG";;
-    p) port="$OPTARG";;
+    i) interface="$OPTARG" ;;
+    p) port="$OPTARG" ;;
+    *) echo "only -i and -p options available"; exit 1 ;;
   esac
 done
 
 make build
 
-if [ ! $? -eq 0 ]; then
+if [[ ! -f analyzer ]]; then
     echo "Compilation error"
     exit 1
 else

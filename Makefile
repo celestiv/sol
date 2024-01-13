@@ -12,4 +12,4 @@ style:
 	clang-format -style=Google -i *.cc *.h
 
 clean:
-	rm -f ${EXECUTABLE}
+	rm -f ${EXECUTABLE} *.o *.a
